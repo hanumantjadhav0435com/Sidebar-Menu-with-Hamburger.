@@ -1,0 +1,118 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f4;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Important */
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+
+    /* Hide sidebar initially */
+    transform: translateX(-100%);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Close Button */
+.close-btn {
+    align-self: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Logo */
+.logo {
+
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Menu Links */
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    color: #007bff;
+    font-weight: bold;
+    background-color: orange;
+    transform: translateX(5px);
+}
+
+/* Active Link */
+.menu-item.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #222;
+        color: #eee;
+    }
+
+    .sidebar {
+        background: #333;
+    }
+
+    .menu-item {
+        color: #eee;
+        background-color: orange;
+    }
+
+    .menu-item:hover {
+        color: #4db8ff;
+
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70%;
+    }
+}
